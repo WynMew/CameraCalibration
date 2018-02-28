@@ -1,2 +1,2 @@
 # CameraCalibration
-opencv based CameraC alibration
+opencv based Camera Calibration
