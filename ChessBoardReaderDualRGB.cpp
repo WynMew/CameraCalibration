@@ -14,8 +14,8 @@ using namespace std;
 
 void main(int argc, char** argv)
 {
-	int RVideoCap = 1;
-	int LVideoCap = 0;
+	int RVideoCap = 0;
+	int LVideoCap = 1;
 	int iFrameRow;
 	int iFrameCol;
 	iFrameRow = 480;
@@ -48,18 +48,18 @@ void main(int argc, char** argv)
 		{
 			//transpose(RImg, RImg);
 			//transpose(LImg, LImg);
-			hconcat(RImg, LImg, mFrameNow);
+			hconcat(LImg, RImg, mFrameNow);
 			imshow("Frame Now", mFrameNow);
 			cvWaitKey(1);
 
 			std::ostringstream RFileNameSS;
-			RFileNameSS <<"R_"<< counter << ".jpg";
+			RFileNameSS << "R_" << counter << ".jpg";
 			string RFileName = RFileNameSS.str();
 
 			std::ostringstream LFileNameSS;
-			LFileNameSS<<"L_" << counter << ".jpg";
+			LFileNameSS << "L_" << counter << ".jpg";
 			string LFileName = LFileNameSS.str();
-			
+
 			imwrite(RFileName, RImg);
 			imwrite(LFileName, LImg);
 
